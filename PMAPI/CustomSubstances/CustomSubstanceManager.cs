@@ -40,7 +40,7 @@ namespace PMAPI.CustomSubstances
             customParams.Add((Substance)id, cParams);
 
             var modAttrib = Assembly.GetCallingAssembly().GetCustomAttribute<PMAPIModAttribute>();
-            EIDManager.eidDictionary.Add((Substance)id, $"{modAttrib.id}:{eid}");
+            EIDManager.eidDictionary.Add((Substance)id, $"PMAPI:{eid}");
 
             CustomLocalizer.AddEnString(substanceParams.displayNameKey, cParams.enName);
             CustomLocalizer.AddJpString(substanceParams.displayNameKey, cParams.jpName);

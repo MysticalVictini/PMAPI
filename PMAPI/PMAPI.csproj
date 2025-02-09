@@ -34,6 +34,9 @@
       <HintPath>$(PRIMITIER_DIR)\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>$(PRIMITIER_DIR)\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
       <HintPath>$(PRIMITIER_DIR)\MelonLoader\Il2CppAssemblies\UnityEngine.InputLegacyModule.dll</HintPath>
       <Private>false</Private>
@@ -45,6 +48,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy $(OutDir)$(AssemblyName).dll &quot;$(PRIMITIER_DIR)\Mods\&quot;"/>
+    <Exec Command="copy $(OutDir)$(AssemblyName).dll &quot;$(PRIMITIER_DIR)\Mods\&quot;" />
   </Target>
 </Project>
