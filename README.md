@@ -11,7 +11,6 @@
 
 
 Victini's Addition: custom textures! (Images need to be in a folder called Resources in the same directory as Mods)
-<image href="https://i.gyazo.com/a0e9d7211cc14e5427707d8f5d5434d1.png" />
 When initializing a material you can set the mainTexture to the return of LoadEmbeddedResource in CustomAssetsManager.
 
 Ex of usage: Texture texture = CustomAssetsManager.LoadEmbeddedResource("laser.png");
