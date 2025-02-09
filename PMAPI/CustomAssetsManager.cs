@@ -27,6 +27,11 @@ namespace PMAPI.CustomAssetsManager
             return texture;
         }
 
+        /// <summary>
+        /// This method is meant to be called whenever a new part is initialized, this will adjust the texture to match the biggest side on the cube.
+        /// Without calling this the texture might not be sized correctly
+        /// </summary>
+        /// <param name="part">this.transform or transform</param>
         public static void fixTexture(Transform part)
         {
             Material mat = part.GetComponent<MeshRenderer>().material;
