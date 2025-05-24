@@ -49,15 +49,18 @@ namespace PMAPI.OreGen.Patches
     {
         private static void Prefix(ref Substance substance, ref float minSize, ref float maxSize, ref float alpha)
         {
-            int randSel = Mathf.RoundToInt(CubeGenerator.chunkRandom.Range(0f, CustomOreManager.customOres.Count - 1));
-            var ore = CustomOreManager.customOres[randSel];
-
-            if (CubeGenerator.chunkRandom.Range(0f, 1f) <= ore.chance && ore.substanceOverride.HasFlag(substance))
+            if (CustomOreManager.customOres.Count > 0)
             {
-                substance = ore.targetSubstance;
-                minSize = ore.minSize;
-                maxSize = ore.maxSize;
-                alpha = ore.alpha;
+                int randSel = Mathf.RoundToInt(CubeGenerator.chunkRandom.Range(0f, CustomOreManager.customOres.Count - 1));
+                var ore = CustomOreManager.customOres[randSel];
+
+                if (CubeGenerator.chunkRandom.Range(0f, 1f) <= ore.chance && ore.substanceOverride.HasFlag(substance))
+                {
+                    substance = ore.targetSubstance;
+                    minSize = ore.minSize;
+                    maxSize = ore.maxSize;
+                    alpha = ore.alpha;
+                }
             }
         }
     }

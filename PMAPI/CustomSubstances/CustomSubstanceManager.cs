@@ -56,6 +56,8 @@ namespace PMAPI.CustomSubstances
             return (Substance)id + 1;
         }
 
+        public static Material errorMaterial;
+
         private static void CreateErrorSubstance()
         {
             var defStone = SubstanceManager.GetParameter(Substance.Stone);
@@ -64,6 +66,7 @@ namespace PMAPI.CustomSubstances
             Material errorMat = Material.GetDefaultMaterial();
             errorMat.shader = Shader.FindBuiltin("Hidden/InternalErrorShader");
             CustomMaterialManager.RegisterMaterial(errorMat);
+            errorMaterial = errorMat;
             errorSubParams.material = errorMat.name;
             errorSubParams.displayNameKey = "SUB_PMAPI_MODERROR";
 

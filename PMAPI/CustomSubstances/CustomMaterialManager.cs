@@ -26,5 +26,12 @@ namespace PMAPI.CustomSubstances
         {
             customMaterials.Add(mat.name, mat);
         }
+
+        public static Material GetMaterial(string name)
+        {
+            Material mat;
+            customMaterials.TryGetValue(name, out mat);
+            return mat;
+        }
     }
 }
